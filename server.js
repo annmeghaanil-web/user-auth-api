@@ -11,6 +11,11 @@ const app = express()
 // Middleware
 app.use(cors())
 app.use(express.json())
+app.get('/', (req, res) => {
+    res.json({
+        message: 'User Authentication API is running'
+    })
+})
 
 // Routes
 app.use('/auth', require('./routes/authRoutes'))
